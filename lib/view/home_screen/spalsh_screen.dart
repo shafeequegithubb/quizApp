@@ -1,5 +1,6 @@
 import 'package:chapter8_quizapp/utils/constants/animation_constatnts.dart';
 import 'package:chapter8_quizapp/utils/constants/color_constants.dart';
+import 'package:chapter8_quizapp/view/home_screen/get_started_screen.dart';
 import 'package:chapter8_quizapp/view/home_screen/home_scrren.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
@@ -16,11 +17,8 @@ class _SpalshScreenState extends State<SpalshScreen> {
   void initState() {
     Future.delayed(Duration(seconds: 3)).then(
       (value) {
-        Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) => HomeScrren(),
-            ));
+        Navigator.push(context,
+            MaterialPageRoute(builder: (context) => GetStartedScreen()));
       },
     );
   }

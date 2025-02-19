@@ -1,16 +1,17 @@
 import 'dart:math';
 
 import 'package:chapter8_quizapp/dummyDb.dart';
+import 'package:chapter8_quizapp/view/home_screen/result_screen.dart';
 import 'package:flutter/material.dart';
 
-class HomeScrren extends StatefulWidget {
-  const HomeScrren({super.key});
+class HomeScreen extends StatefulWidget {
+  const HomeScreen({super.key});
 
   @override
-  State<HomeScrren> createState() => _HomeScrrenState();
+  State<HomeScreen> createState() => _HomeScreenState();
 }
 
-class _HomeScrrenState extends State<HomeScrren> {
+class _HomeScreenState extends State<HomeScreen> {
   Color getcolor(int index) {
     if (selectedIndex != null) {
       if (Dummydb.questions[currentIndex]["answer index"] == selectedIndex &&
@@ -30,7 +31,7 @@ class _HomeScrrenState extends State<HomeScrren> {
 
   int currentIndex = 0;
   int? selectedIndex;
-  int? count;
+  int rightanswercount = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -84,9 +85,10 @@ class _HomeScrrenState extends State<HomeScrren> {
                         if (selectedIndex == null) {
                           selectedIndex = index;
                           setState(() {});
-                          if (index ==
+                          if (selectedIndex ==
                               Dummydb.questions[currentIndex]["answer index"]) {
                             print("right answer");
+                            rightanswercount++;
                           } else {
                             print("WrongAnswer");
                           }
@@ -103,6 +105,14 @@ class _HomeScrrenState extends State<HomeScrren> {
                     if (currentIndex < Dummydb.questions.length - 1) {
                       print(currentIndex);
                       currentIndex++;
+                    } else {
+                      Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => ResultScreen(
+                              rightanswercount: rightanswercount,
+                            ),
+                          ));
                     }
 
                     setState(() {});

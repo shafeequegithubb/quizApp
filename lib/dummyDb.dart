@@ -1,3 +1,5 @@
+import 'package:flutter/material.dart';
+
 class Dummydb {
   static const questions = [
     {
@@ -70,6 +72,25 @@ class Dummydb {
         "It is used for defining classes"
       ],
       "answer index": 0
+    }
+  ];
+
+  static const selectedScreen = [
+    {
+      "color": Colors.purple,
+      "Menu": "DART",
+    },
+    {
+      "Menu": "FLUTTER",
+      "color": Colors.yellow,
+    },
+    {
+      "Menu": "PYTHON",
+      "color": Colors.red,
+    },
+    {
+      "Menu": "JAVA",
+      "color": Colors.purple,
     }
   ];
 }

@@ -1,3 +1,4 @@
+import 'package:chapter8_quizapp/view/home_screen/get_started_screen.dart';
 import 'package:chapter8_quizapp/view/home_screen/spalsh_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -10,9 +11,6 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: SpalshScreen(),
-    );
+    return MaterialApp(debugShowCheckedModeBanner: false, home: SpalshScreen());
   }
 }
